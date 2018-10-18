@@ -1,0 +1,19 @@
+@import '../base/setting';
+.header {
+    background: #20222b;
+    color: white;
+    padding: 1rem 0;
+    margin-bottom: 5rem;
+}
+
+.header__title {
+    font-size: $md-size;
+    margin: 0;
+}
+
+.header__subtitle {
+    font-size: $sm-size;
+    margin: 0;
+    font-weight: 500rem;
+    color: #a5afd7
+}
