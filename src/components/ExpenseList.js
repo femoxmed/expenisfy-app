@@ -5,7 +5,7 @@ import FilterExpense from '../selectors/FilterExpense';
 
 const ExpenseList = (props) => ( <div> {
         props.expenses.map((expense) => {
-            return <ExpenseListItem {...expense }
+            return <ExpenseListItem key={expense.id}{...expense }
             />
         })
     }
