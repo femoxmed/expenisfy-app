@@ -14,7 +14,7 @@
         "build:prod": "webpack -p --env production",
         "dev-server": "webpack-dev-server --watch",
         "start": "node server/server.js",
-        "heroku-postbuild": "yarn run build:prod",
+        "heroku-postbuild": "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production;",
         "test": "cross-env jest --config=jest.config.json"
     },
     "dependencies": {
