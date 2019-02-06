@@ -1,26 +1,31 @@
 import React from 'react'
 import ExpenseForm from '../components/ExpenseForm'
 import { connect  } from 'react-redux'
-import { editExpense } from '../action/expenses';
+import { startEditExpense } from '../action/expenses';
 import {removeExpense } from '../action/expenses'
 
 const EditExpensePage = (props) =>{
     return (
-        <div>
-         This is the edit expense Page {props.match.params.id}
-         <ExpenseForm 
+        //  This is the edit expense Page {props.match.params.id}
+        <div className="page-header">
+        
+        
+        <div  className="content-container">
+        <ExpenseForm 
          //send this props to the component that has just been created 
           expense ={props.expense}
          onSubmit={(expense)=>{
-             props.dispatch(editExpense(props.expense.id,expense));
+             props.dispatch(startEditExpense(props.expense.id,expense));
              props.history.push('/')
          }}/>
 
-         <button  onClick={() => {
+         <button  className="button  button-delete" onClick={() => {
              props.dispatch(removeExpense({id:props.match.params.id}))
              props.history.push('/')
          }}>Delete Expense</button>
-
+      
+        </div>
+         
           
 
         </div>

@@ -7,9 +7,9 @@ const ExpenseDashboardPage = () => {
     return (
         <div>
   <TotalExpense />     
-<ExpenseList />
+
 <ExpenseListFilters />
-         This is the dashboard Page
+<ExpenseList />
         </div>
     )
 };

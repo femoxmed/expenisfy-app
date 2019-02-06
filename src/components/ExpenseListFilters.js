@@ -19,11 +19,22 @@ import {DateRangePicker } from 'react-dates'
 
      render(){
          return (
-            <div>
-            <input type='text' value={this.props.filter.text}
+            <div class="content-container">
+            <div class="input-group">
+
+            <div class="input-group__item"> 
+            <input type='text' className="text-input" value={this.props.filter.text}
             onChange={ (e) => {
                 this.props.dispatch(filterText({text: e.target.value}))  }
-            } /> <select 
+            } 
+            placeholder="Search Expenses"
+            />
+
+            </div>
+
+            <div class="input-group__item">
+            <select 
+            className="select"
             onChange = {(e)=>{
                 if (e.target.value === 'date') {
                     this.props.dispatch(sortByDate())
@@ -37,8 +48,9 @@ import {DateRangePicker } from 'react-dates'
                  <option value='date'>Sort By Date</option>
                  <option value= 'amount'>Sort By Amount</option>
                  </select>
-
-                 <DateRangePicker
+            </div>
+            <div class="input-group__item"> 
+            <DateRangePicker
                  startDate={this.props.filter.startDate}
                  endDate={this.props.filter.endDate}
                  onDatesChange={this.onDatesChange}
@@ -50,6 +62,11 @@ import {DateRangePicker } from 'react-dates'
 
                  />
 
+            </div>
+            </div>
+             
+
+                
             </div>
         )
      }

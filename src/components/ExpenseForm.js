@@ -19,8 +19,11 @@ export default class ExpenseForm extends React.Component {
                 createdAt: moment(),
 
                 calendarFocused: false,
-                error: undefined
+                error: undefined,
+                word :  props.expense ? 'Edit Expense'  : 'Add Expense'
+                
             }
+           
         }
 
         onDescriptionChange = (e) => {
@@ -89,15 +92,14 @@ export default class ExpenseForm extends React.Component {
         render() {
 
             return ( 
-                <div>
-                <h2> Register form </h2> {
-                    this.state.error && <p> { this.state.error } </p>} 
-                    
-                    <form onSubmit = { this.onSubmit } name = 'regForm' >
-
+                
+                    <form class="form" onSubmit = { this.onSubmit } name = 'regForm' >
+                    <span class="form__error">  {this.state.error && <p> { this.state.error } </p>} 
+                     </span>
                         <input
-                    name = 'desc'
+                  
                     type = 'text'
+                    className="text-input"
                     placeholder = 'Description'
                     value = { this.state.description }
                     onChange = { this.onDescriptionChange }
@@ -105,12 +107,13 @@ export default class ExpenseForm extends React.Component {
                         />
 
                         <input type = 'number'
+                        className="text-input"
                     placeholder = 'Amount'
                     value = { this.state.amount }
                     onChange = { this.onAmountChange }
                     />
 
-                    <textArea type = 'text'
+                    <textArea className='textarea' type = 'text'
                     placeholder = 'Type a note for your expense'
                     value = { this.state.note }
                     onChange = { this.onNoteChange } />
@@ -118,6 +121,7 @@ export default class ExpenseForm extends React.Component {
                         
 
                     <SingleDatePicker date = { this.state.createdAt }
+                    
                     onDateChange = { this.onDateChange }
                     focused = { this.state.calendarFocused }
                     onFocusChange = { this.onFocusChange }
@@ -126,10 +130,12 @@ export default class ExpenseForm extends React.Component {
                     isOutsideRange = {
                         () => { false } }
                 />
-
-                    <button type = 'submit'> Add Expenses </button> 
+                  <div>
+                   <button type = 'submit' className={!this.props.expense ? 'button' :  'button button--secondary'}> {this.state.word}</button> 
+                  </div>
+                   
                     </form> 
-                    </div>
+                   
                 )
 
             }

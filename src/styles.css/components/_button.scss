@@ -1,35 +1,20 @@
-.big-button {
-    background: $purple;
-    color: white;
-    border: none;
-    border-bottom: .6rem solid darken($color: $purple, $amount: 10%);
-    font-weight: bold;
-    font-size: $lg-size;
-    width: 100%;
-    margin-bottom: $lg-size;
-    padding: 2.4rem;
-}
-
-.big-button:disabled {
-    opacity: .5;
-}
-
 .button {
-    background: $purple;
+    background: $blue;
     border: none;
-    border-bottom: 0.5rem solid darken($color: $purple, $amount: 10%);
-    font-weight: 500;
-    padding: 0.8rem;
-    color: white
+    color: white;
+    font-size: $font-size-large;
+    font-weight: 300;
+    padding: $s-size;
+    display: inline-block;
+    line-height: 1;
+    padding: $s-size;
+    text-decoration: none;
 }
 
 .button--link {
     background: none;
-    border: none;
-    color: $off-white;
-    padding: 0;
 }
 
-.button--link:disabled {
-    opacity: .5;
+.button--secondary {
+    background: rgb(255, 217, 0);
 }
