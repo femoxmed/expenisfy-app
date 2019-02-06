@@ -57,7 +57,7 @@
     "devDependencies": {
         "chalk": "^2.4.1",
         "cross-env": "5.0.5",
-        "dotenv": "4.0.0",
+        "dotenv": "4.0.0"
 
     },
     "repository": {
