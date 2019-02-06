@@ -57,8 +57,7 @@
         "dotenv": "4.0.0"
     },
     "devDependencies": {
-        "chalk": "^2.4.1",
-
+        "chalk": "^2.4.1"
 
     },
     "repository": {
