@@ -16,7 +16,7 @@
         "dev-server": "webpack-dev-server",
         "start": "node server/server.js",
         "test": "cross-env jest --config=jest.config.json",
-        "heroku-postbuild": "yarn run build:prod"
+        "heroku-postbuild": "npm run build:prod"
     },
     "dependencies": {
         "babel-cli": "^6.26.0",
